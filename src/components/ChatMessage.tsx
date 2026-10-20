@@ -97,12 +97,26 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
 
           {/* Body */}
           {message.error ? (
-            <div className="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-600 dark:text-rose-400 text-sm flex items-start gap-2.5">
-              <AlertTriangle size={18} className="shrink-0 mt-0.5" />
-              <div className="space-y-1">
-                <p className="font-semibold">تعذر إكمال الرد</p>
-                <p className="text-xs opacity-90">{message.content}</p>
+            <div className="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-600 dark:text-rose-400 text-sm flex flex-col gap-2">
+              <div className="flex items-start gap-2.5">
+                <AlertTriangle size={18} className="shrink-0 mt-0.5" />
+                <div className="space-y-1 flex-1">
+                  <p className="font-semibold">تعذر إكمال الرد</p>
+                  <p className="text-xs opacity-90 leading-relaxed">{message.content}</p>
+                </div>
               </div>
+              {onRegenerate && (
+                <div className="flex justify-end pt-1">
+                  <button
+                    type="button"
+                    onClick={onRegenerate}
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-500/20 hover:bg-rose-500/30 text-xs font-medium text-rose-700 dark:text-rose-300 transition-colors cursor-pointer"
+                  >
+                    <RotateCcw size={13} />
+                    <span>إعادة المحاولة</span>
+                  </button>
+                </div>
+              )}
             </div>
           ) : isUser ? (
             <p className="text-slate-900 dark:text-slate-100 text-sm sm:text-base whitespace-pre-wrap leading-relaxed">
