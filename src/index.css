@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-arabic: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  html {
+    font-family: var(--font-arabic);
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: var(--font-arabic);
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
+
+/* Dark mode specific scrollbars */
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(71, 85, 105, 0.4);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.6);
+}
+
+/* Markdown prose typography styles for Arabic chat */
+.prose-chahine {
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.prose-chahine p {
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.prose-chahine p:first-child {
+  margin-top: 0;
+}
+
+.prose-chahine p:last-child {
+  margin-bottom: 0;
+}
+
+.prose-chahine h1, 
+.prose-chahine h2, 
+.prose-chahine h3, 
+.prose-chahine h4 {
+  font-weight: 700;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.prose-chahine h1 { font-size: 1.4rem; }
+.prose-chahine h2 { font-size: 1.25rem; }
+.prose-chahine h3 { font-size: 1.1rem; }
+
+.prose-chahine ul, 
+.prose-chahine ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-right: 1.5rem;
+  list-style-position: outside;
+}
+
+.prose-chahine ul {
+  list-style-type: disc;
+}
+
+.prose-chahine ol {
+  list-style-type: decimal;
+}
+
+.prose-chahine li {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.prose-chahine blockquote {
+  border-right-width: 4px;
+  border-right-color: #14b8a6;
+  padding-right: 1rem;
+  padding-left: 0.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.prose-chahine table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.prose-chahine th, 
+.prose-chahine td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  text-align: right;
+}
+
+.prose-chahine th {
+  background-color: rgba(148, 163, 184, 0.1);
+  font-weight: 600;
+}
+
+/* LTR code blocks inside RTL Arabic layout */
+.code-container-ltr {
+  direction: ltr !important;
+  text-align: left !important;
+  font-family: var(--font-mono) !important;
+}
+
+.inline-code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.375rem;
+  direction: ltr;
+  display: inline-block;
+  unicode-bidi: embed;
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Chahine AI - شاهين للذكاء الاصطناعي",
+  "description": "منصة محادثة ذكية متطورة باللغة العربية مدعومة بنموذج Gemini، مع تصميم عصري وواجهة عربية متكاملة وسجل محادثات ودعم الوضع الداكن والفاتح.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
